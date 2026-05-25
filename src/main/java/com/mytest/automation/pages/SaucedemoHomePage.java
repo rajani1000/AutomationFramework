@@ -56,16 +56,14 @@ public class SaucedemoHomePage extends BasePage {
 
 
     public void handlePasswordChangePopup() {
-        try {
-            // Try ENTER key (common for OK buttons)
+        try {           
             performAction();
             Logs.info("Popup dismissed with ENTER key");
             Thread.sleep(500);
         } catch (Exception e) {
             Logs.info("ENTER key approach failed, trying TAB + ENTER");
-            try {
-                // Try TAB to focus OK, then ENTER
-                //   new Actions(getDriver()).sendKeys(Keys.TAB, Keys.ENTER).perform();
+            try {                
+                new Actions(getDriver()).sendKeys(Keys.TAB, Keys.ENTER).perform();
                 Logs.info("Popup dismissed with TAB + ENTER");
             } catch (Exception e2) {
                 Logs.info("Keyboard approach failed");
