@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Saucedemo TestSuite-UI" parallel="none" configfailurepolicy="continue">
+    <parameter name="dataFile" value="UIData"/>
+    <test name="Saucedemo UI Tests">
+        <classes>
+            <class name="com.mytest.ui.UITests"> </class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
+
