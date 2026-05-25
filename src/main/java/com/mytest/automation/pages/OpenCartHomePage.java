@@ -57,7 +57,7 @@ public class OpenCartHomePage extends BasePage {
         }
     }
 
-    public void searchForItemAndAddToCart(String item) throws InterruptedException {
+    public void searchForItemAndAddToCart(String item) throws Exception {
         getElementWhenClickable(searchItem).click();
         getElementWhenClickable(searchItem).sendKeys(item, Keys.ENTER);
         Logs.info("Searched for item: " + item);
@@ -78,6 +78,7 @@ public class OpenCartHomePage extends BasePage {
             Logs.info("Total amount in cart is: " + amount);
         } else {
             Logs.info("Item added to cart failed");
+            throw new RuntimeException("Item added to cart failed");
         }
     }
 

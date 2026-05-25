@@ -55,20 +55,11 @@ public class SaucedemoHomePage extends BasePage {
     }
 
 
-    public void handlePasswordChangePopup() {
-        try {           
+    public void handlePasswordChangePopup() throws InterruptedException {
+            Thread.sleep(3000);
             performAction();
             Logs.info("Popup dismissed with ENTER key");
             Thread.sleep(500);
-        } catch (Exception e) {
-            Logs.info("ENTER key approach failed, trying TAB + ENTER");
-            try {                
-                new Actions(getDriver()).sendKeys(Keys.TAB, Keys.ENTER).perform();
-                Logs.info("Popup dismissed with TAB + ENTER");
-            } catch (Exception e2) {
-                Logs.info("Keyboard approach failed");
-            }
-        }
     }
 
 

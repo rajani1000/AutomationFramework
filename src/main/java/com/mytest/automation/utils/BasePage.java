@@ -118,7 +118,7 @@ public class BasePage {
         driver.switchTo().alert().accept();
     }
     public void performAction() {
-        ((JavascriptExecutor) driver).executeScript("window.focus();");
+       // ((JavascriptExecutor) driver).executeScript("window.focus();");
         new Actions(driver).sendKeys(Keys.TAB).perform();
         new Actions(driver).sendKeys(Keys.ENTER).perform();
         Logs.info("Password change popup handled: TAB + ENTER");
